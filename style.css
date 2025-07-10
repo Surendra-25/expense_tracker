@@ -1,0 +1,97 @@
+
+/* style.css */
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+body { margin: 0; background: #f4f4f4; display: flex; flex-direction: column; align-items: center; }
+
+.balance-card {
+  background: royalblue; color: white; width: 90%;
+  margin: 20px auto 10px; padding: 15px;
+  border-radius: 10px; text-align: center;
+}
+
+.balance-row {
+  display: flex; justify-content: space-between;
+  margin-top: 10px; font-weight: bold;
+}
+
+.income { color: lightgreen; }
+.expense { color: lightcoral; }
+
+.expense-section {
+  background: white; width: 90%;
+  padding: 15px; border-radius: 10px;
+  margin-bottom: 100px; box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.filter-section {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;
+}
+
+.expense-list { max-height: 200px; overflow-y: auto; }
+
+.transaction {
+  display: flex; justify-content: space-between; padding: 8px;
+  border-radius: 5px; margin-bottom: 5px;
+}
+
+.transaction.income { background: #e8f9e8; color: green; }
+.transaction.expense { background: #fbeaea; color: red; }
+
+.transaction button {
+  background: none; border: none; color: gray; cursor: pointer;
+}
+
+.bottom-nav {
+  position: fixed; bottom: 0; width: 100%;
+  background: royalblue; display: flex;
+  justify-content: space-around; align-items: center; padding: 10px 0;
+}
+
+.nav-btn, .add-btn {
+  border: none; cursor: pointer;
+}
+
+.add-btn {
+  background: white; color: royalblue;
+  border-radius: 50%; width: 50px; height: 50px;
+  text-align: center; line-height: 50px;
+  font-size: 30px; box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  transform: translateY(-20px);
+}
+
+.history-label {
+  position: fixed; bottom: 0; width: 100%;
+  text-align: center; background: royalblue;
+  color: white; font-size: 14px; padding-bottom: 5px;
+}
+
+.modal, .overlay { display: none; position: fixed; }
+.modal.show, .overlay.show { display: block; }
+.overlay {
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); z-index: 5;
+}
+
+.modal {
+  top: 10%; left: 50%; transform: translateX(-50%);
+  background: white; padding: 20px; border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); z-index: 10; width: 85%;
+}
+
+.modal input, .modal select {
+  width: 100%; margin: 8px 0; padding: 10px;
+}
+
+.modal-buttons {
+  display: flex; justify-content: space-between;
+}
+
+.modal button, .export-btn {
+  padding: 10px; width: 48%;
+}
+
+.export-btn {
+  background: #3498db; color: white;
+  border: none; border-radius: 5px;
+  margin-bottom: 10px; cursor: pointer;
+}
