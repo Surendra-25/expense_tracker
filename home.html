@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="balance-card">
+    <h2>Balance</h2>
+    <div id="balance">₹0.00</div>
+    <div class="balance-row">
+      <span class="income">Income<br><span id="totalIncome">0.00</span></span>
+      <span class="expense">Expense<br><span id="totalExpense">0.00</span></span>
+    </div>
+  </div>
+
+  <div class="expense-section">
+    <div class="filter-section">
+      <select id="filterCategory">
+        <option value="">All Categories</option>
+        <option value="Food">Food</option>
+        <option value="Salary">Salary</option>
+        <option value="Rent">Rent</option>
+        <option value="Shopping">Shopping</option>
+      </select>
+      <input type="date" id="filterDate">
+      <button class="export-btn" onclick="exportCSV()">📤 Export CSV</button>
+    </div>
+
+    <h3>Expense List</h3>
+    <div class="expense-list" id="expenseList"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <button class="nav-btn">⬇️</button>
+    <button class="add-btn" onclick="openModal()">+</button>
+    <button class="nav-btn">⬆️</button>
+  </div>
+  <div class="history-label">History</div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <h3>Add Transaction</h3>
+    <input type="number" id="amount" placeholder="Enter Amount" />
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <input type="text" id="desc" placeholder="Description" />
+    <select id="category">
+      <option value="Food">Food</option>
+      <option value="Salary">Salary</option>
+      <option value="Rent">Rent</option>
+      <option value="Shopping">Shopping</option>
+    </select>
+    <input type="date" id="date" />
+    <div class="modal-buttons">
+      <button onclick="submitTransaction()">Submit</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
